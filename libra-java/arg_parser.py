@@ -8,6 +8,7 @@ parser.add_argument('--tree', '-t', action=STORE_TRUE, help='Creates a tree diag
 ### Java specific functions
 parser.add_argument('--cache', "-c", action=STORE_TRUE, help='Caches files to make traversing files faster')
 parser.add_argument('--clear-cache', action=STORE_TRUE, help='Clears the cache')
-parser.add_argument("--clazz", "-cls", help= "Starts a depth-first search to find a class and its contingencies")
+parser.add_argument("--clazz", "-cls", help= "Starts a search on a java class, takes the capitalized name of the class, e.g. 'MyClass' from 'MyClass.java'")
+parser.add_argument("--method", "-m", help= "Searches the method of the java class, should match the private method name verbatim.")
 
 # File traversing for files specifically,
