@@ -27,11 +27,11 @@ if __name__ == "__main__":
 
 
     # Cache clearing, if both flags for cache and clearing cache are given, clear the cache anyways
-    if args.cache:
+    if args.clear_cache:
       clear_cache()
       exit(0)
 
-    elif args.clear_cache:
+    elif args.cache:
       cache_file_paths(entry, ignored_files, ignored_folders)
       exit(0)
 

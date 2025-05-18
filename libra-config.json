@@ -30,6 +30,6 @@
         "colorize.py": "/home/mfong415/projects/libra-java-cli/libra-java/utils/colorize.py",
         "walk_folder.py": "/home/mfong415/projects/libra-java-cli/libra-java/utils/walk_folder.py",
         "open_json.py": "/home/mfong415/projects/libra-java-cli/libra-java/utils/open_json.py",
-        "MockClass": "/home/mfong415/projects/libra-java-cli/mock_java_folder/MockClass.java"
+        "MockClass": "/home/mfong415/projects/libra-java-cli/mock_java_folder/com/linkedin/voyager/dash/conversations/services/MockClass.java"
     }
 }
