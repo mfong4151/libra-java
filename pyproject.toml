@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools>=65", "wheel"]        # or poetry/hatchling if you prefer
+build-backend = "setuptools.build_meta"
+
+[project]
+name     = "libra"
+version  = "0.1.0"
+description = "CLI for <whatever Libra does>"
+authors  = [{ name = "Maxwell Fong", email = "max@example.com" }]
+requires-python = ">=3.9"
+dependencies = [
+    "pyperclip>=1.8",     # list runtime deps here
+]
+
+[project.scripts]
+libra = "libra.main:main"   # pkg.module:function  ← console-script entry point
