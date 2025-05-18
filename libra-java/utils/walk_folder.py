@@ -11,10 +11,11 @@ def _is_ignored_folder(path: str, ignored_folders: set[str]):
       return True
   return False
 
-def walk_folder(ignored_files: set[str], ignored_folders: set[str]):
+def walk_folder(cwd, ignored_files: set[str], ignored_folders: set[str]):
+
     pathed_files = []  
   
-    for root, _, filenames in walk():
+    for root, _, filenames in walk(cwd):
         is_ignored_folder = _is_ignored_folder(root, ignored_folders)  
         for filename in filenames:
             if is_ignored_folder or filename in ignored_files:

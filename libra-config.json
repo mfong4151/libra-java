@@ -1,18 +1,35 @@
 {
-    "ignored_files":[
+    "ignored_files": [
         ".gitignore",
         "tsconfig.json",
         "package-lock.json",
-        "package.json"
-
+        "package.json",
+        "pyproject.toml"
     ],
-    "ignored_folders":[
+    "ignored_folders": [
         "node_modules",
         "__pycache__",
         "build",
         ".git"
     ],
-    "names_to_sanitize":[
-    ]
-
+    "names_to_sanitize": [],
+    "file_cache": {
+        "scratch.py": "/home/mfong415/projects/libra-java-cli/scratch.py",
+        "libra-config.json": "/home/mfong415/projects/libra-java-cli/libra-config.json",
+        "README.md": "/home/mfong415/projects/libra-java-cli/README.md",
+        "todo.py": "/home/mfong415/projects/libra-java-cli/tests/todo.py",
+        "rg_parser.py": "/home/mfong415/projects/libra-java-cli/libra-java/arg_parser.py",
+        "main.py": "/home/mfong415/projects/libra-java-cli/libra-java/main.py",
+        "display_config.py": "/home/mfong415/projects/libra-java-cli/libra-java/display_config/display_config.py",
+        "caching.py": "/home/mfong415/projects/libra-java-cli/libra-java/caching/caching.py",
+        "estimate_tokens.py": "/home/mfong415/projects/libra-java-cli/libra-java/file_parsing/estimate_tokens.py",
+        "stringify_file.py": "/home/mfong415/projects/libra-java-cli/libra-java/file_parsing/stringify_file.py",
+        "extract.py": "/home/mfong415/projects/libra-java-cli/libra-java/file_parsing/extract.py",
+        "copy_to_clipboard.py": "/home/mfong415/projects/libra-java-cli/libra-java/file_parsing/copy_to_clipboard.py",
+        "file_io.py": "/home/mfong415/projects/libra-java-cli/libra-java/utils/file_io.py",
+        "colorize.py": "/home/mfong415/projects/libra-java-cli/libra-java/utils/colorize.py",
+        "walk_folder.py": "/home/mfong415/projects/libra-java-cli/libra-java/utils/walk_folder.py",
+        "open_json.py": "/home/mfong415/projects/libra-java-cli/libra-java/utils/open_json.py",
+        "MockClass": "/home/mfong415/projects/libra-java-cli/mock_java_folder/MockClass.java"
+    }
 }

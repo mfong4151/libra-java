@@ -19,7 +19,7 @@ def extract_file_bodies(cwd: str,  ignored_files: set[str], ignored_folders: set
     """    
     res = []
       
-    pathed_files = walk_folder(ignored_files, ignored_folders)
+    pathed_files = walk_folder(cwd, ignored_files, ignored_folders)
     for file in pathed_files:
           contents = stringify_file(cwd, file)
           res.append(contents)
@@ -42,7 +42,6 @@ def create_piped_name(file: str, depth: int) -> str:
 def extract_file_tree(config, dir: str = getcwd) -> str:
     res = [f"{dir}/"]
     ignored_files, ignored_folders = unpack_config(config)
-
     def dfs(dir: str, depth: int) -> None:
         if isfile(dir):
             return

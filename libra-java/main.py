@@ -2,6 +2,7 @@
 from file_parsing.extract import extract_file_bodies, extract_file_tree, unpack_config
 from file_parsing.estimate_tokens import estimate_tokens, warn_excession
 from file_parsing.copy_to_clipboard import copy_to_clipboard, get_from_clipboard
+from caching.caching import cache_file_paths, clear_cache
 from utils.colorize import colorize, CYAN, BOLD
 from arg_parser import parser
 from utils.open_json import open_json
@@ -27,11 +28,14 @@ if __name__ == "__main__":
 
 
     # Cache clearing, if both flags for cache and clearing cache are given, clear the cache anyways
-    if is_clearing_cache :
-      
-      
+    if is_clearing_cache:
+      clear_cache()
       exit(0)
 
+    elif is_caching:
+      cache_file_paths(entry, ignored_files, ignored_folders)
+      exit(0)
+    
 
 
     # Gets the child most file path for use in file path namings, we assume the last item is the cwd
