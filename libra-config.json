@@ -13,10 +13,6 @@
         ".git"
     ],
     "names_to_sanitize":[
-       "voyager",
-        "Ugc",
-        "UGC",
-        "ugc"
     ]
 
 }
