@@ -1,8 +1,10 @@
 import argparse
 
 parser = argparse.ArgumentParser(description="Makes copy pasting file contents for chatGPT easier")
-parser.add_argument('--config', '-c', action='store_true', help='Displays the contents of the config file')
-parser.add_argument('--ignore_files', '-ifi', help="Adds folders to ignore")
-parser.add_argument('--ignore_folders', '-ifo', help="Adds folders to ignore")
 parser.add_argument('--tree', '-t', action='store_true', help='Creates a tree diagram of the file structure.')
-parser.add_argument("--sanitize", "-s", action="store_true", help="Sanitizes and copies items to the clipboard based on the config file.")
+
+### Java specific functions
+parser.add_argument('--cache', '-c', action='store_true', help='Caches files to make traversing files faster')
+parser.add_argument('--clear-cache', action='store_true', help='Clears the cache')
+
+# File traversing for files specifically,

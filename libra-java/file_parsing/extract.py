@@ -1,17 +1,10 @@
 from os import listdir, getcwd, walk
 from os.path import isfile, join
 from file_parsing.stringify_file import stringify_file
+from utils.walk_folder import walk_folder
 from typing import List
 
 
-## TODO  I'm sure there are edge cases here, look into them
-def _is_ignored_folder(path: str, ignored_folders: set[str]):
-  path_set = set(path.split("/"))
-  
-  for ignored_folder in ignored_folders:
-    if ignored_folder in path_set:
-      return True
-  return False
 
 def unpack_config(config) -> List[str]:
     ignored_files = set(config['ignored_files'])
@@ -25,18 +18,9 @@ def extract_file_bodies(cwd: str,  ignored_files: set[str], ignored_folders: set
     Extracts the bodies of files
     """    
     res = []
-    copyable_files = []  
-    
-  
-    for root, _, filenames in walk(cwd):
-        is_ignored_folder = _is_ignored_folder(root, ignored_folders)  
-        for filename in filenames:
-            if is_ignored_folder or filename in ignored_files:
-              continue
-            
-            copyable_files.append(join(root, filename))
-    
-    for file in copyable_files:
+      
+    pathed_files = walk_folder(ignored_files, ignored_folders)
+    for file in pathed_files:
           contents = stringify_file(cwd, file)
           res.append(contents)
     

@@ -17,9 +17,22 @@ if __name__ == "__main__":
     args = parser.parse_args()
     entry = getcwd()
     ignored_files, ignored_folders = set(), set()  
-    
     config = open_json(CONFIG_PATH)
     ignored_files, ignored_folders =  unpack_config(config)
+
+    
+    # Flags
+    is_caching = args.cache
+    is_clearing_cache = args.clear_cache
+
+
+    # Cache clearing, if both flags for cache and clearing cache are given, clear the cache anyways
+    if is_clearing_cache :
+      
+      
+      exit(0)
+
+
 
     # Gets the child most file path for use in file path namings, we assume the last item is the cwd
     full_file_path = getcwd()
