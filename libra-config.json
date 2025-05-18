@@ -4,7 +4,8 @@
         "tsconfig.json",
         "package-lock.json",
         "package.json",
-        "pyproject.toml"
+        "pyproject.toml",
+        "libra-config.json"
     ],
     "ignored_folders": [
         "node_modules",
@@ -15,7 +16,6 @@
     "names_to_sanitize": [],
     "file_cache": {
         "scratch.py": "/home/mfong415/projects/libra-java-cli/scratch.py",
-        "libra-config.json": "/home/mfong415/projects/libra-java-cli/libra-config.json",
         "README.md": "/home/mfong415/projects/libra-java-cli/README.md",
         "todo.py": "/home/mfong415/projects/libra-java-cli/tests/todo.py",
         "rg_parser.py": "/home/mfong415/projects/libra-java-cli/libra-java/arg_parser.py",
@@ -30,6 +30,6 @@
         "colorize.py": "/home/mfong415/projects/libra-java-cli/libra-java/utils/colorize.py",
         "walk_folder.py": "/home/mfong415/projects/libra-java-cli/libra-java/utils/walk_folder.py",
         "open_json.py": "/home/mfong415/projects/libra-java-cli/libra-java/utils/open_json.py",
-        "MockClass": "/home/mfong415/projects/libra-java-cli/mock_java_folder/com/linkedin/voyager/dash/conversations/services/MockClass.java"
+        "com.linkedin.voyager.dash.conversations.services.MockClass": "/home/mfong415/projects/libra-java-cli/mock_java_folder/com/linkedin/voyager/dash/conversations/services/MockClass.java"
     }
 }
