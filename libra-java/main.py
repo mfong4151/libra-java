@@ -23,34 +23,46 @@ if __name__ == "__main__":
 
     
     # Flags
-    is_caching = args.cache
-    is_clearing_cache = args.clear_cache
+    
 
 
     # Cache clearing, if both flags for cache and clearing cache are given, clear the cache anyways
-    if is_clearing_cache:
+    if args.cache:
       clear_cache()
       exit(0)
 
-    elif is_caching:
+    elif args.clear_cache:
       cache_file_paths(entry, ignored_files, ignored_folders)
       exit(0)
-    
 
-
-    # Gets the child most file path for use in file path namings, we assume the last item is the cwd
-    full_file_path = getcwd()
-    print(full_file_path)
-    
-    # Gets the file contents of all the files, copies them to the clipboard
-    file_contents = extract_file_bodies(full_file_path, ignored_files, ignored_folders )
-    copy_to_clipboard(file_contents)
-    num_tokens = estimate_tokens(file_contents)
-    warn_excession(num_tokens)
-    num_tokens = colorize(f"{CYAN}{BOLD}", num_tokens)
-    print(f"Estimated tokens: {num_tokens}")
-
-    file_contents =  get_from_clipboard()
+    elif args.clazz:
+      print(args.clazz)
+      ## TODO feed the following prompt to chatgpt and integrate
+      """
+      This is libra-java, a cli to copy paste java classes in an organized fashion. I want you to create a class based off the else 
+      branch in the main.py file, which specifically copies all the functions in a file, and any imports it relies on.
+      
+      I want you to create a stylistically similar function that does the following.
+      1. Given the name of a java class, copies the java class first. Rely on the libra-config.json file for this
+      2. Then, copies all of the imported functions relying on the package keywords. We can decypher their location from the import statements at the top of the page
+      3. If the functions cannot be found, ignore them. 
+      4. Copies all of the code to the keyboard 
+      
+      """
+      
+      exit(0)
+      
+    else:  
+      # Gets the child most file path for use in file path namings, we assume the last item is the cwd
+      full_file_path = getcwd()
+      
+      # Gets the file contents of all the files, copies them to the clipboard
+      file_contents = extract_file_bodies(full_file_path, ignored_files, ignored_folders )
+      copy_to_clipboard(file_contents)
+      num_tokens = estimate_tokens(file_contents)
+      warn_excession(num_tokens)
+      num_tokens = colorize(f"{CYAN}{BOLD}", num_tokens)
+      print(f"Estimated tokens: {num_tokens}")
     
     # Handle tree arguments
     if args.tree:
