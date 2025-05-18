@@ -8,7 +8,7 @@ from arg_parser import parser
 from utils.open_json import open_json
 from os import getcwd
 from dotenv import load_dotenv
-
+from java_extractor.java_extractor import extract_method_chain
 load_dotenv()
 
 
@@ -35,20 +35,9 @@ if __name__ == "__main__":
       cache_file_paths(entry, ignored_files, ignored_folders)
       exit(0)
 
-    elif args.clazz:
+    elif args.clazz and args.method:
       print(args.clazz)
-      ## TODO feed the following prompt to chatgpt and integrate
-      """
-      This is libra-java, a cli to copy paste java classes in an organized fashion. I want you to create a class based off the else 
-      branch in the main.py file, which specifically copies all the functions in a file, and any imports it relies on.
-      
-      I want you to create a stylistically similar function that does the following.
-      1. Given the name of a java class, copies the java class first. Rely on the libra-config.json file for this
-      2. Then, copies all of the imported functions relying on the package keywords. We can decypher their location from the import statements at the top of the page
-      3. If the functions cannot be found, ignore them. 
-      4. Copies all of the code to the keyboard 
-      
-      """
+      extract_method_chain(args.clazz, args.method)
       
       exit(0)
       

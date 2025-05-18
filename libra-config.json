@@ -5,7 +5,9 @@
         "package-lock.json",
         "package.json",
         "pyproject.toml",
-        "libra-config.json"
+        "libra-config.json",
+        "README.md",
+        "MockClass.java"
     ],
     "ignored_folders": [
         "node_modules",
